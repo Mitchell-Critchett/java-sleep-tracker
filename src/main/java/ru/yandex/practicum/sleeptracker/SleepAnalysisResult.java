@@ -10,7 +10,10 @@ public class SleepAnalysisResult {
         this.result = result;
     }
 
-    public SleepAnalysisResult(String text) {}
+    public SleepAnalysisResult(String text) {
+        this.text = text;
+        this.result = null;
+    }
 
     @Override
     public String toString() {

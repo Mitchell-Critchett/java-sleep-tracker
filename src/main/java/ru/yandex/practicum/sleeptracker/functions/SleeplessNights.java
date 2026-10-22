@@ -4,13 +4,10 @@ import ru.yandex.practicum.sleeptracker.SleepAnalysisResult;
 import ru.yandex.practicum.sleeptracker.SleepingSession;
 import ru.yandex.practicum.sleeptracker.exceptions.EmptyLogException;
 
-import java.time.Duration;
-import java.time.LocalTime;
+
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.function.Function;
-
-import static java.time.Period.between;
 
 public class SleeplessNights implements Function<ArrayList<SleepingSession>, SleepAnalysisResult> {
     @Override

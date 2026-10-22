@@ -19,7 +19,7 @@ public class BadSessionsCount implements Function<ArrayList<SleepingSession>, Sl
             throw new EmptyLogException();
         }
 
-        return new SleepAnalysisResult((long) sessions.stream()
+        return new SleepAnalysisResult(sessions.stream()
                 .filter(session -> session.getSleepQuality() == SleepQuality.BAD)
                 .count(),
                 "Количество сессий с низким качеством сна");
