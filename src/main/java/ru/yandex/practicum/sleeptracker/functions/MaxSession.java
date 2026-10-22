@@ -7,7 +7,6 @@ import ru.yandex.practicum.sleeptracker.exceptions.EmptyLogException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Function;
 
 public class MaxSession implements Function<List<SleepingSession>, SleepAnalysisResult> {
