@@ -21,7 +21,7 @@ public class BadSessionsCount implements Function<ArrayList<SleepingSession>, Sl
 
         return new SleepAnalysisResult((long) sessions.stream()
                 .filter(session -> session.getSleepQuality() == SleepQuality.BAD)
-                .toList().size(),
+                .count(),
                 "Количество сессий с низким качеством сна");
     }
 }

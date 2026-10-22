@@ -3,6 +3,7 @@ package ru.yandex.practicum.sleeptracker;
 import ru.yandex.practicum.sleeptracker.functions.AverageSessionTime;
 import ru.yandex.practicum.sleeptracker.functions.BadSessionsCount;
 import ru.yandex.practicum.sleeptracker.functions.MinSession;
+import ru.yandex.practicum.sleeptracker.functions.SleeplessNights;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +19,14 @@ public class SleepTrackerApp {
         Function<ArrayList<SleepingSession>, SleepAnalysisResult> minSession = new MinSession();
         Function<ArrayList<SleepingSession>, SleepAnalysisResult> avgSessionTime = new AverageSessionTime();
         Function<ArrayList<SleepingSession>, SleepAnalysisResult> badSessionsCount = new BadSessionsCount();
+        Function<ArrayList<SleepingSession>, SleepAnalysisResult> sleeplessNightsCount = new SleeplessNights();
 
         functions.add(maxSession);
         functions.add(minSession);
         functions.add(avgSessionTime);
         functions.add(badSessionsCount);
+        functions.add(sleeplessNightsCount);
 
-
+        List<SleepingSession> sessions = SleepLogReader.getSessionsList("sleep_log.txt");
     }
 }

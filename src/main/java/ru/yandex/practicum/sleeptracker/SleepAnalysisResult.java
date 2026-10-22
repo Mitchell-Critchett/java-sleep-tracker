@@ -10,10 +10,17 @@ public class SleepAnalysisResult {
         this.result = result;
     }
 
+    public SleepAnalysisResult(String text) {}
+
     @Override
     public String toString() {
-        return "Результаты анализа " +
-                "название анализа: " + text + '\'' +
-                ", результат " + result;
+
+        if (result != null) {
+            return "Результаты анализа " +
+                    "название анализа: " + text + '\'' +
+                    ", результат " + result;
+        } else {
+            return "Результаты анализа: " + text + '\'';
+        }
     }
 }
