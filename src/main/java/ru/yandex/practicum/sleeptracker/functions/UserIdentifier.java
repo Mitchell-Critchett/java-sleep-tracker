@@ -5,22 +5,21 @@ import ru.yandex.practicum.sleeptracker.SleepingSession;
 import ru.yandex.practicum.sleeptracker.exceptions.EmptyLogException;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class UserIdentifier implements Function<ArrayList<SleepingSession>, SleepAnalysisResult> {
+public class UserIdentifier implements Function<List<SleepingSession>, SleepAnalysisResult> {
     @Override
-    public SleepAnalysisResult apply(ArrayList<SleepingSession> sessions) {
+    public SleepAnalysisResult apply(List<SleepingSession> sessions) {
 
         if (sessions == null || sessions.isEmpty()) {
             throw new EmptyLogException();
         }
 
-        //Считаем ночи и передаём их в соответствие
+        //Считает ночи и сохраняет их в соответствие
         Map<Integer, Long> nightsType = sessions.stream()
                 .filter(SleepingSession::isNightSession)
                 .collect(

@@ -19,11 +19,10 @@ public class SleepAnalysisResult {
     public String toString() {
 
         if (result != null) {
-            return "Результаты анализа " +
-                    "название анализа: " + text + '\'' +
+            return "Название анализа: " + text +
                     ", результат " + result;
         } else {
-            return "Результаты анализа: " + text + '\'';
+            return "Результаты анализа: " + text;
         }
     }
 }

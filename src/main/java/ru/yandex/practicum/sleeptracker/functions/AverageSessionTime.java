@@ -3,16 +3,16 @@ package ru.yandex.practicum.sleeptracker.functions;
 import ru.yandex.practicum.sleeptracker.SleepAnalysisResult;
 import ru.yandex.practicum.sleeptracker.SleepingSession;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
-public class AverageSessionTime implements Function<ArrayList<SleepingSession>, SleepAnalysisResult> {
+public class AverageSessionTime implements Function<List<SleepingSession>, SleepAnalysisResult> {
 
     public AverageSessionTime() {
     }
 
     @Override
-    public SleepAnalysisResult apply(ArrayList<SleepingSession> sessions) {
+    public SleepAnalysisResult apply(List<SleepingSession> sessions) {
         if (sessions == null || sessions.isEmpty()) {
             return null;
         }

@@ -4,15 +4,15 @@ import ru.yandex.practicum.sleeptracker.SleepAnalysisResult;
 import ru.yandex.practicum.sleeptracker.SleepingSession;
 import ru.yandex.practicum.sleeptracker.exceptions.EmptyLogException;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.Function;
 
-public class MinSession implements Function<ArrayList<SleepingSession>, SleepAnalysisResult> {
+public class MinSession implements Function<List<SleepingSession>, SleepAnalysisResult> {
 
     @Override
-    public SleepAnalysisResult apply(ArrayList<SleepingSession> sessions) {
+    public SleepAnalysisResult apply(List<SleepingSession> sessions) {
         if (sessions == null || sessions.isEmpty()) {
             throw new EmptyLogException();
         }

@@ -7,11 +7,12 @@ import ru.yandex.practicum.sleeptracker.exceptions.EmptyLogException;
 
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
-public class SleeplessNights implements Function<ArrayList<SleepingSession>, SleepAnalysisResult> {
+public class SleeplessNights implements Function<List<SleepingSession>, SleepAnalysisResult> {
     @Override
-    public SleepAnalysisResult apply(ArrayList<SleepingSession> sessions) {
+    public SleepAnalysisResult apply(List<SleepingSession> sessions) {
 
         if (sessions == null || sessions.isEmpty()) {
             throw new EmptyLogException();

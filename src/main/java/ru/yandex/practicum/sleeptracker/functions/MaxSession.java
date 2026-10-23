@@ -21,7 +21,7 @@ public class MaxSession implements Function<List<SleepingSession>, SleepAnalysis
             throw new EmptyLogException();
         }
 
-        return new SleepAnalysisResult(Collections.min(sessions, Comparator.comparingLong(SleepingSession::getDuration))
+        return new SleepAnalysisResult(Collections.max(sessions, Comparator.comparingLong(SleepingSession::getDuration))
                 .getDuration() / 60, "Время самого продолжительного сна в минутах");
     }
 }
