@@ -36,7 +36,6 @@ public class SleepTrackerApp {
 
             } catch (RuntimeException e) {
                 System.out.println(e.getMessage());
-                e.printStackTrace();
             }
     }
 }

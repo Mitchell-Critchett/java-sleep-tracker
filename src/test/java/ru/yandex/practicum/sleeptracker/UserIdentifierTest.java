@@ -16,14 +16,14 @@ class UserIdentifierTest {
 
     private SleepingSession session(
             int day, int startHour, int startMinute,
-            int endDay, int endHour, int endMinute) {
+            int endDay, int endHour) {
 
         return new SleepingSession(
                 LocalDateTime.of(
                         2026, 10, day, startHour, startMinute
                 ),
                 LocalDateTime.of(
-                        2026, 10, endDay, endHour, endMinute
+                        2026, 10, endDay, endHour, 0
                 ),
                 null
         );
@@ -33,10 +33,10 @@ class UserIdentifierTest {
     @Test
     void shouldIdentifyOwl() {
         List<SleepingSession> sessions = List.of(
-                session(20, 23, 30, 21, 10, 0),
-                session(21, 23, 30, 22, 10, 0),
-                session(22, 23, 30, 23, 10, 0),
-                session(23, 21, 0, 24, 5, 0)
+                session(20, 23, 30, 21, 10),
+                session(21, 23, 30, 22, 10),
+                session(22, 23, 30, 23, 10),
+                session(23, 21, 0, 24, 5)
         );
 
         var result = function.apply(sessions);
@@ -48,10 +48,10 @@ class UserIdentifierTest {
     @Test
     void shouldIdentifyEarlyBird() {
         List<SleepingSession> sessions = List.of(
-                session(20, 21, 0, 21, 5, 0),
-                session(21, 21, 0, 22, 5, 0),
-                session(22, 21, 0, 23, 5, 0),
-                session(23, 23, 30, 24, 10, 0)
+                session(20, 21, 0, 21, 5),
+                session(21, 21, 0, 22, 5),
+                session(22, 21, 0, 23, 5),
+                session(23, 23, 30, 24, 10)
         );
 
         var result = function.apply(sessions);
@@ -63,9 +63,9 @@ class UserIdentifierTest {
     @Test
     void shouldIdentifyPigeonWhenOwlAndEarlyBirdCountsAreEqual() {
         List<SleepingSession> sessions = List.of(
-                session(20, 23, 30, 21, 10, 0),
-                session(21, 21, 0, 22, 5, 0),
-                session(22, 22, 30, 23, 8, 0)
+                session(20, 23, 30, 21, 10),
+                session(21, 21, 0, 22, 5),
+                session(22, 22, 30, 23, 8)
         );
 
         var result = function.apply(sessions);

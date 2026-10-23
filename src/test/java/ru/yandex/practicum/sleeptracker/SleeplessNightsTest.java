@@ -16,11 +16,11 @@ class SleeplessNightsTest {
     private final SleeplessNights function = new SleeplessNights();
 
     private SleepingSession session(
-            int day, int startHour, int endDay, int endHour) {
+            int day, int endDay) {
 
         return new SleepingSession(
-                LocalDateTime.of(2026, 10, day, startHour, 0),
-                LocalDateTime.of(2026, 10, endDay, endHour, 0),
+                LocalDateTime.of(2026, 10, day, 22, 0),
+                LocalDateTime.of(2026, 10, endDay, 6, 0),
                 null
         );
     }
@@ -47,7 +47,7 @@ class SleeplessNightsTest {
     @Test
     void shouldCalculateSleeplessNightsForOneSession() {
         List<SleepingSession> sessions = List.of(
-                session(20, 22, 23, 6)
+                session(20, 23)
         );
 
         var result = function.apply(sessions);
@@ -60,8 +60,8 @@ class SleeplessNightsTest {
     @Test
     void shouldCalculateSleeplessNightsForMultipleSessions() {
         List<SleepingSession> sessions = List.of(
-                session(20, 22, 21, 6),
-                session(23, 22, 24, 6)
+                session(20, 21),
+                session(23, 24)
         );
 
         var result = function.apply(sessions);

@@ -6,7 +6,6 @@ import ru.yandex.practicum.sleeptracker.exceptions.EmptyLogException;
 
 
 import java.time.Period;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
