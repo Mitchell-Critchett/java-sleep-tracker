@@ -44,6 +44,7 @@ class AverageSessionTimeTest {
                 result.text
         );
     }
+
     //Возвращает null если список сессий пуст
     @Test
     void shouldReturnNullWhenSessionsListIsEmpty() {
@@ -53,6 +54,7 @@ class AverageSessionTimeTest {
 
         assertNull(result);
     }
+
 //    Должен возвращать продолжительность одной сессии если она единственная
     @Test
     void shouldReturnSessionDurationWhenListContainsOneSession() {
