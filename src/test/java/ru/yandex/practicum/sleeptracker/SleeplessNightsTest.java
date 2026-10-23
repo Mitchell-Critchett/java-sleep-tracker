@@ -1,4 +1,3 @@
-
 package ru.yandex.practicum.sleeptracker;
 
 import org.junit.jupiter.api.Test;
@@ -8,7 +7,8 @@ import ru.yandex.practicum.sleeptracker.functions.SleeplessNights;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 //Проверка функции вычисления бессонных ночей
 class SleeplessNightsTest {
@@ -25,7 +25,7 @@ class SleeplessNightsTest {
         );
     }
 
-//    Бросается исключение если список пуст
+    //    Бросается исключение если список пуст
     @Test
     void shouldThrowExceptionWhenSessionsAreNull() {
         assertThrows(
@@ -34,7 +34,7 @@ class SleeplessNightsTest {
         );
     }
 
-//    Бросается исключение если список пуст
+    //    Бросается исключение если список пуст
     @Test
     void shouldThrowExceptionWhenSessionsAreEmpty() {
         assertThrows(
@@ -43,7 +43,7 @@ class SleeplessNightsTest {
         );
     }
 
-//    Должно возвращать корректное кол-во бессонных ночей если сессия одна
+    //    Должно возвращать корректное кол-во бессонных ночей если сессия одна
     @Test
     void shouldCalculateSleeplessNightsForOneSession() {
         List<SleepingSession> sessions = List.of(
@@ -56,7 +56,7 @@ class SleeplessNightsTest {
         assertEquals(2L, result.result);
     }
 
-//    Должно возвращать корректное кол-во бессонных ночей если сессий несколько
+    //    Должно возвращать корректное кол-во бессонных ночей если сессий несколько
     @Test
     void shouldCalculateSleeplessNightsForMultipleSessions() {
         List<SleepingSession> sessions = List.of(

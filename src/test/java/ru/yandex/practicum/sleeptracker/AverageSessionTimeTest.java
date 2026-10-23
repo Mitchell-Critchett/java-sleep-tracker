@@ -1,4 +1,3 @@
-
 package ru.yandex.practicum.sleeptracker;
 
 import org.junit.jupiter.api.Test;
@@ -12,24 +11,15 @@ import static org.junit.jupiter.api.Assertions.*;
 // Тест функции вычисления среднего времени сна
 class AverageSessionTimeTest {
 
-    private final AverageSessionTime averageSessionTime =
-            new AverageSessionTime();
+    private final AverageSessionTime averageSessionTime = new AverageSessionTime();
 
     //Проверка на корректное вычисление
     @Test
     void shouldCalculateAverageSessionTime() {
         // Arrange
-        SleepingSession session1 = new SleepingSession(
-                LocalDateTime.of(2026, 10, 20, 22, 0),
-                LocalDateTime.of(2026, 10, 21, 6, 0),
-                null
-        );
+        SleepingSession session1 = new SleepingSession(LocalDateTime.of(2026, 10, 20, 22, 0), LocalDateTime.of(2026, 10, 21, 6, 0), null);
 
-        SleepingSession session2 = new SleepingSession(
-                LocalDateTime.of(2026, 10, 21, 22, 0),
-                LocalDateTime.of(2026, 10, 22, 5, 0),
-                null
-        );
+        SleepingSession session2 = new SleepingSession(LocalDateTime.of(2026, 10, 21, 22, 0), LocalDateTime.of(2026, 10, 22, 5, 0), null);
 
         List<SleepingSession> sessions = List.of(session1, session2);
 
@@ -39,10 +29,7 @@ class AverageSessionTimeTest {
         // Assert
         assertNotNull(result);
         assertEquals(450L, result.result);
-        assertEquals(
-                "Средняя продолжительность сна в минутах",
-                result.text
-        );
+        assertEquals("Средняя продолжительность сна в минутах", result.text);
     }
 
     //Возвращает null если список сессий пуст
@@ -55,14 +42,10 @@ class AverageSessionTimeTest {
         assertNull(result);
     }
 
-//    Должен возвращать продолжительность одной сессии если она единственная
+    //    Должен возвращать продолжительность одной сессии если она единственная
     @Test
     void shouldReturnSessionDurationWhenListContainsOneSession() {
-        SleepingSession session = new SleepingSession(
-                LocalDateTime.of(2026, 10, 22, 23, 0),
-                LocalDateTime.of(2026, 10, 23, 6, 0),
-                null
-        );
+        SleepingSession session = new SleepingSession(LocalDateTime.of(2026, 10, 22, 23, 0), LocalDateTime.of(2026, 10, 23, 6, 0), null);
 
         List<SleepingSession> sessions = List.of(session);
 

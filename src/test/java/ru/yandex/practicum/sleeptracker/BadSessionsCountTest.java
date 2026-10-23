@@ -7,7 +7,8 @@ import ru.yandex.practicum.sleeptracker.functions.BadSessionsCount;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 //Функция подсчёта сессий с плохим качеством сна
 class BadSessionsCountTest {
@@ -22,7 +23,7 @@ class BadSessionsCountTest {
         );
     }
 
-//    Проверка на корректный подсчёт
+    //    Проверка на корректный подсчёт
     @Test
     void shouldCountBadSessions() {
         List<SleepingSession> sessions = List.of(
@@ -37,7 +38,7 @@ class BadSessionsCountTest {
         assertEquals(2L, result.result);
     }
 
-//    Возвращается 0 если нет плохих сессий
+    //    Возвращается 0 если нет плохих сессий
     @Test
     void shouldReturnZeroWhenNoBadSessionsExist() {
         List<SleepingSession> sessions = List.of(
@@ -50,7 +51,7 @@ class BadSessionsCountTest {
         assertEquals(0L, result.result);
     }
 
-//    Бросается исключение если список пуст или null
+    //    Бросается исключение если список пуст или null
     @Test
     void shouldThrowExceptionWhenSessionsAreEmpty() {
         assertThrows(

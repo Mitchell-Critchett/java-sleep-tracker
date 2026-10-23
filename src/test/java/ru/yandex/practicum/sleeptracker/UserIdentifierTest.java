@@ -1,4 +1,3 @@
-
 package ru.yandex.practicum.sleeptracker;
 
 import org.junit.jupiter.api.Test;
@@ -7,7 +6,7 @@ import ru.yandex.practicum.sleeptracker.functions.UserIdentifier;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 //Проверка функции определения типа пользователя
 class UserIdentifierTest {

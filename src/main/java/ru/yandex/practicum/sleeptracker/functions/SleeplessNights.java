@@ -22,7 +22,7 @@ public class SleeplessNights implements Function<List<SleepingSession>, SleepAna
 
         return new SleepAnalysisResult((long) days - sessions.stream()
                 .filter(SleepingSession::isNightSession)
-                        .count(), "количество бессонных ночей");
+                .count(), "количество бессонных ночей");
     }
 
 }

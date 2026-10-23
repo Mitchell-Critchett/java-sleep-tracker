@@ -42,7 +42,7 @@ public class SleepingSession {
 
         LocalTime start = startSleep.toLocalTime();
         LocalTime end = endSleep.toLocalTime();
-        LocalTime nightEnd = LocalTime.of(6,0);
+        LocalTime nightEnd = LocalTime.of(6, 0);
 
         //Если начинается до 6:00, то это точно ночной сон
         if (start.isBefore(nightEnd)) {

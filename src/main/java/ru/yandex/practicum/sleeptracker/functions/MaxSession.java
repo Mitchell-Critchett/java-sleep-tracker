@@ -17,7 +17,7 @@ public class MaxSession implements Function<List<SleepingSession>, SleepAnalysis
     @Override
     public SleepAnalysisResult apply(List<SleepingSession> sessions) {
 
-        if (sessions == null || sessions.isEmpty()){
+        if (sessions == null || sessions.isEmpty()) {
             throw new EmptyLogException();
         }
 

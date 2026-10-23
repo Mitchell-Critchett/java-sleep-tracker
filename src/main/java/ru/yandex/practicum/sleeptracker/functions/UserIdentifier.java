@@ -24,8 +24,8 @@ public class UserIdentifier implements Function<List<SleepingSession>, SleepAnal
                 .filter(SleepingSession::isNightSession)
                 .collect(
                         Collectors.groupingBy(
-                            this::nightIdentifier,
-                            Collectors.counting()
+                                this::nightIdentifier,
+                                Collectors.counting()
                         )
                 );
 
@@ -35,10 +35,10 @@ public class UserIdentifier implements Function<List<SleepingSession>, SleepAnal
                 nightsType.getOrDefault(3, 0L)
         );
 
-        if (nightsList.get(0) > Math.max(nightsList.get(1),nightsList.get(2))) {
+        if (nightsList.get(0) > Math.max(nightsList.get(1), nightsList.get(2))) {
             return new SleepAnalysisResult("Вы сова");
         }
-        if (nightsList.get(1) > Math.max(nightsList.get(0),nightsList.get(2))) {
+        if (nightsList.get(1) > Math.max(nightsList.get(0), nightsList.get(2))) {
             return new SleepAnalysisResult("Вы жаворонок");
         }
 
@@ -61,7 +61,7 @@ public class UserIdentifier implements Function<List<SleepingSession>, SleepAnal
             return 1;
 
         if (sleepStart.isBefore(LocalTime.of(22, 0))
-                && sleepEnd.isBefore(LocalTime.of(7,0)))
+                && sleepEnd.isBefore(LocalTime.of(7, 0)))
             return 2;
 
         else return 3;

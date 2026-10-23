@@ -1,4 +1,3 @@
-
 package ru.yandex.practicum.sleeptracker;
 
 import org.junit.jupiter.api.Test;
@@ -8,7 +7,8 @@ import ru.yandex.practicum.sleeptracker.functions.MinSession;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 //     Функция подсчёта минимальной продолжительности сна
 class MinSessionTest {
@@ -23,7 +23,7 @@ class MinSessionTest {
         );
     }
 
-//    Проверка корректности подсчётов
+    //    Проверка корректности подсчётов
     @Test
     void shouldReturnShortestSessionInMinutes() {
         List<SleepingSession> sessions = List.of(
@@ -37,7 +37,7 @@ class MinSessionTest {
         assertEquals(300L, result.result);
     }
 
-//    Должен возвращать продолжительность одной сессии если она единственная
+    //    Должен возвращать продолжительность одной сессии если она единственная
     @Test
     void shouldReturnDurationWhenOnlyOneSessionExists() {
         List<SleepingSession> sessions = List.of(
@@ -49,7 +49,7 @@ class MinSessionTest {
         assertEquals(420L, result.result);
     }
 
-//    Бросается исключение если список пуст или null
+    //    Бросается исключение если список пуст или null
     @Test
     void shouldThrowExceptionWhenSessionsAreNull() {
         assertThrows(
